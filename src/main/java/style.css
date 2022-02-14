@@ -128,6 +128,22 @@
 }
 
 /*all similar content styling code*/
+section {
+    padding: 100px 0;
+}
+
+
+.about, .education, .skills {
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.education .education-content,
+.skills .skills-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .section .title {
     position: relative;
@@ -150,39 +166,24 @@
     transform: translateX(-50%);
 }
 
-.section.title::after {
+.section .title::after {
     position: absolute;
     bottom: -12px;
     left: 50%;
     font-size: 20px;
     color: crimson;
     padding: 5px;
-    background-color: #fff;
+    background-color: #ffffff;
     transform: translateX(-50%);
 }
 
 /*about section styling*/
 
-section {
-    padding: 100px 0;
-}
-
-.about, .education {
-    font-family: 'Poppins', sans-serif;
-}
-
-.about .title::after{
+.about  .title:after {
     content: "Who I Am";
 }
 
-.about .about-content ,
-.education .education-content
-{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
+
 
 .about .about-content .left {
     width: 45%;
@@ -218,6 +219,7 @@ section {
     background: crimson;
     color: white;
     font-size: 25px;
+    font-weight: 500;
     padding: 12px 36px;
     margin-top: 20px;
     border-radius: 6px;
@@ -231,19 +233,21 @@ section {
 }
 
 /* education section styling*/
-.education{
+.education {
     color: white;
     background: #111111;
 }
-.education .title ::before{
+
+.education .title ::before {
     background: white;
 }
-.education .title::after{
+
+.education .title::after {
     background: #111111;
     content: "My schools and Educations";
 }
 
-.education .education-content .card{
+.education .education-content .card {
     width: calc(33% - 20px);
     background: #222;
     text-align: center;
@@ -252,31 +256,130 @@ section {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.education .education-content .card box{
+
+.education .education-content .card box {
     transition: all 0.3s ease;
 }
 
-.education .education-content .card:hover .box{
+.education .education-content .card:hover .box {
     transform: scale(1.05);
 }
-.education .education-content .card:hover{
+
+.education .education-content .card:hover {
     background: crimson;
 }
 
-.education .education-content .card i{
+.education .education-content .card i {
     font-size: 50px;
     color: crimson;
     transition: color 0.3s ease;
 }
-.education .education-content .card:hover i{
+
+.education .education-content .card:hover i {
     color: #14dcb4;
 }
 
-.education .education-content .card text{
+.education .education-content .card text {
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
+
+
+
+
+/* skills section styling */
+
+.skills .title::after{
+    content: "What I Know";
+}
+
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skills .skills-content .left p{
+    text-align: justify;
+}
+
+.skills .skills-content .left a{
+    display: inline-block;
+    background: crimson;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover{
+    color: crimson;
+    background: none;
+}
+
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+
+}
+
+.skills .skills-content .right .info {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .skills-content .right .span{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    left: 0;
+    top: 0;
+    background: crimson;
+}
+
+.skills-content .right .JAVA::before{
+    width: 85%;
+}
+
+.skills-content .right .MySQL::before{
+    width: 80%;
+}
+
+.skills-content .right .JPA::before{
+    width: 80%;
+}
+
+.skills-content .right .HTML\/CSS::before{
+    width: 55%;
+}
+
+
+
+
+
 
 
 /* responsive media query start*/
@@ -373,10 +476,16 @@ section {
         flex: 100%;
     }
 
-    .education .education-content .card{
+    .education .education-content .card {
         width: calc(50% - 10px);
         margin-bottom: 20px;
 
+    }
+
+
+    .skills .skills-content .column{
+        width: 100%;
+        margin-bottom: 35px;
     }
 
 
@@ -400,6 +509,7 @@ section {
     .home .home-content a {
         font-size: 20px;
     }
+
     .education .education-content .card{
         width: 100%;
 
